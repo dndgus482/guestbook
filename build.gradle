@@ -37,6 +37,7 @@ dependencies {
 
 	implementation 'com.querydsl:querydsl-jpa'
 
+	testImplementation 'com.h2database:h2'
 }
 
 test {
