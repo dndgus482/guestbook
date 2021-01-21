@@ -5,18 +5,23 @@ import com.dndgus482.guestbook.entity.QGuestbook;
 import com.querydsl.core.BooleanBuilder;
 import com.querydsl.core.types.dsl.BooleanExpression;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.test.context.TestPropertySource;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 
 import java.util.Optional;
 import java.util.stream.IntStream;
 
-@SpringBootTest
+@ExtendWith(SpringExtension.class)
+@TestPropertySource("classpath:application-test.properties")
+@DataJpaTest
 public class GuestbookRepositoryTests {
 
     @Autowired
